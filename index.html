@@ -4,24 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
-    <style>
-        div {
-            height: 400px;
-            width: 800px;
-            background: red;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body>
     
-    <div>
-        <h1 href=".">Want to play again?</h1>
-    </div>
+    <h1><a HREF="javascript:history.go(0)">Want to play again?</a></h1>
 
     <script type="text/javascript">
 
@@ -48,7 +35,7 @@
                 gamesPlayed++;
 
                 console.log("computer: " + computerChoice + ", " + "human: " + humanChoice);
-                alert("The computer chose " + computerChoice);
+                alert("The computer chose " + computerChoice + ".");
 
                 if (computerChoice === gameChoices[0] && humanChoice === gameChoices[0]) {
                     alert("We push.");
