@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, Scissors</title>
+</head>
+
+<body>
+
+    <h1>Open the console to see the magic!</h1>
+
+    <script type="text/javascript">
+
+        //  Define the variables needed throughout the program
+
+        var gameChoices = ["rock", "paper", "scissors"];
+        var humanWins = 0;
+        var humanLoses = 0;
+        var pushes = 0;
+        var gamesPlayed = 0;
+
+        // Begin while loop to define number of games
+
+        while (gamesPlayed < 10) {
+
+            //  Generate each sides' choice
+
+            var humanChoice = prompt("Rock, paper, or scissors?")
+            var computerChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+
+            //  Log each sides' choice and run game logic
+
+            if (gameChoices.includes(humanChoice.toLowerCase())) {
+                gamesPlayed++;
+
+                console.log("computer: " + computerChoice + ", " + "human: " + humanChoice);
+                alert("The computer chose " + computerChoice);
+
+                if (computerChoice === gameChoices[0] && humanChoice === gameChoices[0]) {
+                    alert("We push.");
+                    pushes++;
+                }
+                else if (computerChoice === gameChoices[1] && humanChoice === gameChoices[1]) {
+                    alert("We push.");
+                    pushes++;
+                }
+                else if (computerChoice === gameChoices[2] && humanChoice === gameChoices[2]) {
+                    alert("We push.");
+                    pushes++;
+                }
+                else if (computerChoice === gameChoices[0] && humanChoice === gameChoices[1]) {
+                    alert("Paper beats rock, you win!");
+                    humanWins++;
+
+                } else if (computerChoice === gameChoices[0] && humanChoice === gameChoices[2]) {
+                    alert("Rock beats scissors, you lose!");
+                    humanLoses++;
+
+                } else if (computerChoice === gameChoices[1] && humanChoice === gameChoices[0]) {
+                    alert("Paper beats rock, you lose!");
+                    humanLoses++;
+
+                } else if (computerChoice === gameChoices[1] && humanChoice === gameChoices[2]) {
+                    alert("Scissors beats paper, you win!");
+                    humanWins++;
+                }
+                else if (computerChoice === gameChoices[2] && humanChoice === gameChoices[1]) {
+                    alert("Scissors beats paper, you lose!");
+                    humanLoses++;
+                }
+                else if (computerChoice === gameChoices[2] && humanChoice === gameChoices[0]) {
+                    alert("Rock beats scissors, you win!");
+                    humanWins++;
+                }
+            
+            //  Tally number of games played  
+
+            console.log("Games played: " + gamesPlayed);
+
+            // Ensure there is valid input from the user
+
+            } else {
+                alert("You didn't make a valid choice. Are you trying to cheat, " + name + "?")
+            };
+
+        }
+
+        // Log and display final scores
+
+        console.log("Human wins: " + humanWins);
+        console.log("Human loses: " + humanLoses);
+        console.log("Pushes: " + pushes);
+        alert("Final score:\nHumans: " + humanWins+ "\nComputers: " + humanLoses+ "\nPushes: " + pushes)
+
+    </script>
+
+
+</body>
+
+</html>
