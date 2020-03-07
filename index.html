@@ -26,12 +26,13 @@
 
             //  Generate each sides' choice
 
-            var humanChoice = prompt("Rock, paper, or scissors?")
+            var humanChoice = prompt("Rock, paper, or scissors?");
+            var humanChoice = humanChoice.toLowerCase();
             var computerChoice = gameChoices[Math.floor(Math.random() * gameChoices.length)];
 
             //  Log each sides' choice and run game logic
 
-            if (gameChoices.includes(humanChoice.toLowerCase())) {
+            if (gameChoices.includes(humanChoice)) {
                 gamesPlayed++;
 
                 console.log("computer: " + computerChoice + ", " + "human: " + humanChoice);
@@ -81,7 +82,7 @@
             // Ensure there is valid input from the user
 
             } else {
-                alert("You didn't make a valid choice. Are you trying to cheat, " + name + "?")
+                alert("You didn't make a valid choice.")
             };
 
         }
